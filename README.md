@@ -47,7 +47,10 @@ node install.js
 
 **This script will create a file located in `./capstone-backend/.env` you will still need to configure your MongoDB access credentials in this file**
 
-2. Locate the `./capstone-backend/.env` file and edit the environment vari
+2. Locate the `./capstone-backend/.env` file and edit the value of the `DB_URL` with your own MongoDB Connection string
+```.env
+DB_URL="YOUR_MONGO_DB_URL_HERE" # replace YOUR_MONGO_DB_URL_HERE with your connection string
+```
 
 3. You will have to install your node packages from `package.json` to `node_modules`
 
