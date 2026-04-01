@@ -4,7 +4,7 @@ import Products from '../components/Products';
 import { useUserStore } from '../store/UserStore';
 import UploadForm from '../components/UploadForm';
 
-const Home = () => {
+const Admin = () => {
   const { username, role } = useUserStore();
   const [products, setProducts] = useState([]);
   const [newUpload, setNewUpload] = useState(false);
@@ -24,35 +24,15 @@ const Home = () => {
     };
     fetchProducts();
   }, [newUpload]);
-    const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const formData = {
-        id,
-        name: productName,
-        price,
-      }
-      await createProduct(formData);
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  const handleUploadSuccess = () => {
-    setNewUpload(prev => !prev);
-  }
+    
 
   return (
     <main className='main-content'>
-      <h2>Home</h2>
-      <p>Welcome back {username || "Guest!"}</p>
+      
       <Products products={products} />
-      {role === "admin" && (
-     <UploadForm onUploadSuccess={handleUploadSuccess} />
-      )}
+      
       
     </main>
   )
 }
-
-export default Home
+export default Admin

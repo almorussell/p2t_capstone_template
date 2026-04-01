@@ -12,5 +12,9 @@
   "description": "",
   "devDependencies": {
     "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "cloudinary": "^2.9.0",
+    "multer": "^2.1.1"
   }
 }
